@@ -1,108 +1,206 @@
-/* Reset default margin and padding */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+  }
 
-/* Global Styles */
+
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f5f5f5;
+    background-color: black;
     margin: 0;
-    padding: 20px; /* Adding padding to the body to prevent sticking at the top */
+    overflow-x: hidden;
+    color: white;
+}
+
+
+header {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Aligns content towards the top */
-    min-height: 100vh;
-}
-
-/* Main Container */
-section {
-    background-color: white;
-    padding: 2rem;
-    width: 90%;
-    max-width: 800px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    align-items: center;
     text-align: center;
-    margin-top: 30px; /* Adding margin to ensure there's space from the top */
-}
-
-/* Header */
-header {
-    background-color: #4CAF50;
+    height: 100vh;
+    background-color: blue;
     color: white;
-    padding: 2rem;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
 }
 
 header h1 {
-    font-size: 2rem;
+    font-size: 3rem;
     margin: 0;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+header h1:hover {
+    color: black;
+    transform: scale(1.1);
 }
 
 header p {
     margin: 1rem 0 0;
+    font-size: 1.25rem;
 }
 
-/* Section Titles */
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh; 
+    background-color: #121212;
+    color: white;
+    flex-direction: column;
+    padding: 2rem;
+    transition: transform 1s ease, opacity 1s ease;
+    opacity: 0;
+    transform: translateY(100px);
+    visibility: hidden;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+
 h2 {
-    color: #4CAF50;
+    color: blue;
     margin-bottom: 1rem;
+    transition: transform 0.3s ease;
 }
 
-/* List Items */
+h2:hover {
+    transform: scale(1.1);
+}
+
+
 ul {
     list-style: none;
     padding: 0;
 }
 
 ul li {
-    background-color: #e7f7e7;
+    background-color: #1e1e1e;
     margin-bottom: 0.5rem;
     padding: 0.75rem;
     border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Links */
+ul li:hover {
+    background-color: blue;
+    transform: translateY(-3px);
+}
+
+
 a {
-    color: #4CAF50;
+    color: blue;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 a:hover {
+    color: white;
+    transform: scale(1.1);
     text-decoration: underline;
 }
 
-/* Definition List */
-dl dt {
+
+dl {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 0;
+}
+
+dl dt, dl dd {
+    margin: 0;
+}
+
+dl .card {
+    background-color: #1e1e1e;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; 
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    height: 100px; 
+}
+
+dl .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+dl .card dt {
+    font-size: 1.1rem;
     font-weight: bold;
-    color: #333;
-    margin-top: 1rem;
+    color: blue;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
 }
 
-dl dd {
-    margin-left: 1.5rem;
-    color: #666;
+dl .card dt:hover {
+    color: white;
 }
 
-/* Blockquote */
+dl .card dd {
+    font-size: 0.95rem;
+    color: #bbb;
+}
+
 blockquote {
     font-style: italic;
-    color: #555;
-    border-left: 4px solid #4CAF50;
+    color: #ccc;
+    border-left: 4px solid blue;
     padding-left: 1rem;
     margin-top: 2rem;
+    transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Responsive Design */
+blockquote:hover {
+    border-color: white;
+    transform: scale(1.05);
+}
+
+
+window.addEventListener('scroll', () => {
+    const section = document.querySelector('section');
+    const rect = section.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom >= 0) {
+        section.classList.add('visible');
+    }
+});
+
+
 @media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
     section {
         padding: 1.5rem;
     }
+
+    header {
+        padding: 1.5rem;
+    }
+}
+
 
     header {
         padding: 1.5rem;

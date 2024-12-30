@@ -4,59 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Hello, I'm Sathvik Kemtur 👋</h1>
+        <h1>Sathvik Kemtur</h1>
         <p>I am passionate about technology and problem-solving. Here's a glimpse of my work:</p>
     </header>
 
     <section>
-        <h2>🛠️ Projects</h2>
+        <h2> Projects</h2>
         <ul>
             <li><strong>Project 1</strong>: A short description of your project1.</li>
-            <li><strong>Project 2</strong>: A short description of another project2.</li>
         </ul>
 
         <h2>🚀 Skills</h2>
         <ul>
-            <li>C++, Python</li>
+            <li>C++, Python, Html and R for statistics</li>
             <li>Data Structures and Algorithms</li>
         </ul>
 
         <h2>🌐 Find Me Online</h2>
         <ul>
-            <li><a href="https://github.com/your-github-username" target="_blank">GitHub</a></li>
-            <li><a href="https://linkedin.com/in/your-linkedin-profile" target="_blank">LinkedIn</a></li>
+            <li><a href="https://github.com/Sathvik265" target="_blank">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/sathvik-kemtur-9553452a9/" target="_blank">LinkedIn</a></li>
         </ul>
 
         <h2>Portfolio Topic</h2>
-        <dl>
-            <dt>Design and Analysis of Algorithms</dt>
-            <dd>Algorithmic Problem Solving</dd>
+<dl>
+    <div class="card">
+        <dt>Design and Analysis of Algorithms</dt>
+    </div>
+    <div class="card">
+        <dt>24ECS205</dt>
+    </div>
+    <div class="card">
+        <dt>Sathvik Kemtur</dt>
+    </div>
+    <div class="card">
+        <dt>01FE23BCS143</dt>
+    </div>
+    <div class="card">
+        <dt>Course Instructor</dt>
+    </div>
+    <div class="card">
+        <dt>KLE Technological University</dt>
+    </div>
+    <div class="card">
+        <dt>Portfolio Topic/Domain</dt>
+    </div>
+</dl>
 
-            <dt>24ECS205</dt>
-            <dd>Course Code Placeholder</dd>
-
-            <dt>Sathvik Kemtur</dt>
-            <dd>Your Name</dd>
-
-            <dt>01FE23BCS143</dt>
-            <dd>Your SRN</dd>
-
-            <dt>Course Instructor</dt>
-            <dd>Instructor Name Placeholder</dd>
-
-            <dt>University</dt>
-            <dd>Your University Name</dd>
-
-            <dt>Portfolio Topic/Domain</dt>
-            <dd>Google</dd>
-        </dl>
 
         <blockquote>“The only way to do great work is to love what you do.” – Steve Jobs</blockquote>
     </section>
+    <script>
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const section = document.querySelector('section');
+            const rect = header.getBoundingClientRect();
+            if (rect.bottom <= 0) {
+                section.classList.add('visible');
+            }
+        });
+    </script>
+    
+    
 </body>
 </html>
